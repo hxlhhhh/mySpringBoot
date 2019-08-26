@@ -1,7 +1,9 @@
 package com.example.demo;
 
 import com.lxh.DemoApplication;
+import com.lxh.dao.UserMapperPageHelper;
 import com.lxh.depc.entity.Configuration1;
+import com.lxh.entity.User;
 import com.lxh.properties.MyProperties1;
 import com.lxh.properties.MyProperties2;
 import com.lxh.util.JedisPoolUtil;
@@ -81,6 +83,25 @@ public class DemoApplicationTests {
         System.out.println("================================");
     }
 
+    @Autowired
+    private UserMapperPageHelper userMapperPageHelper;
+
+    @Test
+    public void TestPageHelper(){
+        /*final User user1 = new User("u1", "p1","email1");
+        final User user2 = new User("u2", "p2","email2");
+        final User user3 = new User("u3", "p3","email3");
+        final User user4 = new User("u4", "p4","email4");
+        userMapperPageHelper.insertSelective(user2);
+        userMapperPageHelper.insertSelective(user3);
+        userMapperPageHelper.insertSelective(user4);
+        int num = userMapperPageHelper.countByUsername("u2");
+        System.out.println("一共查询到："+num+"条数据");*/
+        User user = userMapperPageHelper.selectOne2(new User("u1", "p1", "email1"));
+        System.out.println(user);
+
+
+    }
 }
 
 

@@ -28,6 +28,12 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public User(String uname, String pwd, String email) {
+        this.uname = uname;
+        this.pwd = pwd;
+        this.email = email;
+    }
+
     public void setId(Integer id) {
         Id = id;
     }

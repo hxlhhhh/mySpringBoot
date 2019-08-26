@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DruidConfiguration {
-    
+
     @Value("${spring.datasource.url}")
     private String url;
 
@@ -70,7 +70,7 @@ public class DruidConfiguration {
     private String connectionProperties;
     
     @Bean
-    @Primary
+    @Primary  //@Primary 告诉spring 当一个接口有多个实现类时优先选择哪一个具体的实现。
     public DataSource dataSource() {
         DruidDataSource datasource = new DruidDataSource();
 
