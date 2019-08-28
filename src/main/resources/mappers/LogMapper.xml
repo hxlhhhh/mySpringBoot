@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxh.dao.LogMapper" >
+    <select id="saveLog" parameterType="com.lxh.entity.SysLog">
+        INSERT INTO `t_sys_log` (
+            user_name,
+            user_ip,
+            request_method,
+            request_desc,
+            create_time
+        )
+        VALUES (#{userName},#{userIp}, #{requestMethod},#{requestDesc},#{createTime})
+    </select>
+</mapper>

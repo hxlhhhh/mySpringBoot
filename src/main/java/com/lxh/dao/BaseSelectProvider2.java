@@ -10,7 +10,7 @@ public class BaseSelectProvider2 extends MapperTemplate {
         super(mapperClass, mapperHelper);
     }
 
-    public String selectOne(MappedStatement ms) {
+    public String selectOne2(MappedStatement ms) {
         Class<?> entityClass = this.getEntityClass(ms);
         this.setResultType(ms, entityClass);
         StringBuilder sql = new StringBuilder();

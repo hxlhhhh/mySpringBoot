@@ -9,5 +9,5 @@ public interface BaseMapper2<T> {
         type = BaseSelectProvider2.class,
         method = "selectOne2"
     )
-    T selectOne2(T var1);
+    T selectOne22(T var1);
 }

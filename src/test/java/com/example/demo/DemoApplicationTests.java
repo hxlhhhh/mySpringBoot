@@ -3,9 +3,10 @@ package com.example.demo;
 import com.lxh.DemoApplication;
 import com.lxh.dao.UserMapperPageHelper;
 import com.lxh.depc.entity.Configuration1;
-import com.lxh.entity.User;
+import com.lxh.entity.SysLog;
 import com.lxh.properties.MyProperties1;
 import com.lxh.properties.MyProperties2;
+import com.lxh.service.LogService;
 import com.lxh.util.JedisPoolUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -96,11 +97,22 @@ public class DemoApplicationTests {
         userMapperPageHelper.insertSelective(user3);
         userMapperPageHelper.insertSelective(user4);
         int num = userMapperPageHelper.countByUsername("u2");
-        System.out.println("一共查询到："+num+"条数据");*/
+        System.out.println("一共查询到："+num+"条数据");
         User user = userMapperPageHelper.selectOne2(new User("u1", "p1", "email1"));
-        System.out.println(user);
+        System.out.println(user);*/
+    }
 
+    @Autowired
+    private LogService logService;
 
+    @Test
+    public void TestSaveLog(){
+        SysLog sysLog = new SysLog();
+        sysLog.setUserIp("192.168.10.99");
+        sysLog.setUserName("zhangsan");
+        sysLog.setRequestDesc("这是测试");
+        sysLog.setRequestMethod("save");
+        logService.saveLog(sysLog);
     }
 }
 
